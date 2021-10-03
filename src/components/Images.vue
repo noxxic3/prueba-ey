@@ -2,6 +2,8 @@
   <div>
     <h1>Images</h1>
     
+    <p class="loadMessage" v-if="loading">Loading images...</p>
+    
     <section>
       <div class="img_container" v-for="(img, index) in images" v-bind:key='index'  data-test="img_container">
         <p><span>Album ID:</span> {{img.albumId}}</p> 
@@ -12,8 +14,8 @@
         
         
         <div class="picture" v-on:click="removeImage(index)">              <!-- APUNTES -->  <!-- vue-lazyload  does not work with the <picture> element, so multiple <img> elements are used for different image sizes and CSS is used to display one or the other based on screen size. --> 
-          <img class="img_full" v-bind:src="img.url" alt="Full image">          
-          <img class="img_thumb" v-bind:src="img.thumbnailUrl" alt="Thumbnail image">
+          <img class="img_full" v-lazy="img.url" alt="Full image">          
+          <img class="img_thumb" v-lazy="img.thumbnailUrl" alt="Thumbnail image">
         </div>
       
         <!--
@@ -109,7 +111,18 @@ img {
   display: none;
 }
 
+@keyframes loadingAnimation {               
+  0%   {opacity: 100%;}        
+  50%  {opacity: 10%;}
+  100% {opacity: 100%;}
+}
 
+.loadMessage { 
+  color: #663300;
+  animation-name: loadingAnimation;
+  animation-duration: 1s;
+  animation-iteration-count: infinite;  
+}
 
 		/* Tablet */
 		@media screen and (min-width: 768px) {                
