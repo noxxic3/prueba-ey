@@ -3,9 +3,7 @@ import App from './App.vue'
 
 import VueLazyload from 'vue-lazyload'                          // VueLazyload
 
-
 Vue.config.productionTip = false
-
 
 import axios from 'axios';
 axios.defaults.baseURL = 'https://jsonplaceholder.typicode.com/';

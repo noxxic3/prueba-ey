@@ -1,7 +1,7 @@
 import { mount } from '@vue/test-utils'
 import flushPromises from "flush-promises"          
 import axios from 'axios'
-import Images from '../src/components/Images.vue'            
+import Images from '../src/components/Images - axios complete.vue'            
 
 // Mock AJAX request
 const mockImageList = { 

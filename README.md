@@ -1,29 +1,39 @@
-# prueba-ey
+# [Technical test] Lazy load images
 
-## Project setup
+Small Vue 2 project in which images from a given URL are rendered using the 
+<a href="https://www.npmjs.com/package/vue-lazyload" target="_blank">vue-lazyload</a> library,
+and when one of them is pressed, it disappears.
+
+## Project Set Up
+
+### Installation & Set Up
+
+1. Install Vue CLI
+```
+npm install -g @vue/cli
+```
+
+2. Install dependencies
 ```
 npm install
 ```
 
-### Compiles and hot-reloads for development
+### Run development server
+
+* Compiles and hot-reloads for development
 ```
 npm run serve
 ```
 
-### Compiles and minifies for production
-```
-npm run build
-```
-
-### Run your unit tests
+### Run tests
+* Run test files in `__tests__` folder
 ```
 npm run test:unit
 ```
 
-### Lints and fixes files
-```
-npm run lint
-```
+### Building for Production
 
-### Customize configuration
-See [Configuration Reference](https://cli.vuejs.org/config/).
+* Generate production build
+```
+npm run build
+```

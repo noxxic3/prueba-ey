@@ -31,14 +31,20 @@ export default {
   },
   async mounted(){
     this.loading = true;
-
+    //const response = await axios.get('photos');
+    
+    // Axios request
     try {
-      const response = await axios.get('photos');
+      const response = await axios({
+          method: 'get',
+          url: 'photos',
+      });
+      console.log(response.data);
       this.images = response.data;
     } catch (err) {
       // Handle Error Here
       console.error(err);
-    } 
+    }
 
     this.loading = false;  
   }, 
