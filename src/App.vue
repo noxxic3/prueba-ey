@@ -1,18 +1,16 @@
 <template>
   <div id="app">
-    <img alt="Vue logo" src="./assets/logo.png">
-    <HelloWorld msg="Welcome to Your Vue.js App"/>
+
+    <h1>App.vue</h1>
+    
+    <images />
+
   </div>
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld.vue'
-
 export default {
   name: 'App',
-  components: {
-    HelloWorld
-  }
 }
 </script>
 
@@ -24,5 +22,21 @@ export default {
   text-align: center;
   color: #2c3e50;
   margin-top: 60px;
+
+  font-size: 0.5em;
 }
+
+		/* Tablet */
+		@media screen and (min-width: 768px) {                
+      #app {
+        font-size: 0.8em; 
+      }
+		}
+		
+		/* Desktop */
+		@media screen and (min-width: 1280px) {                
+      #app {
+        font-size: 1em;
+      }
+		}
 </style>
